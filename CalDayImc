@@ -1,0 +1,146 @@
+#include <stdio.h>
+
+int main() {
+    float peso, altura, idade, IMC;
+    float vM1 = 88.362, vM2 = 13.397, vM3 = 4.799, vM4 = 5.677, vM5 = 500;
+    float vF1 = 447.593, vF2 = 9.247, vF3 = 3.098, vF4 = 4.330, vF5 = 300;
+    char objetivo;
+    char nome[50];
+    char sexo;
+    IMC = peso / (altura * altura);
+
+    
+    printf("Informe seu nome: ");
+    scanf("%s", nome);
+
+    printf("%s, informe seu sexo (M/F): ", nome);
+    scanf(" %c", &sexo);
+
+    printf("%s, informe sua idade: ", nome);
+    scanf("%f", &idade);
+
+    printf("%s, informe sua altura em metros (EX: 1.70): ", nome);
+    scanf("%f", &altura);
+
+    printf("%s, informe seu peso em kg: ", nome);
+    scanf("%f", &peso);
+
+    printf("%s, informe seu objetivo (E para emagrecimento, H para hipertrofia): ", nome);
+    scanf(" %c", &objetivo);
+
+    
+    switch (sexo) {
+        case 'F':
+        case 'f': 
+            switch (objetivo) {
+                case 'E':
+                case 'e':  
+                    printf("%s, a sua quantidade mínima de calorias diárias para emagrecimento saudável é: %.2f\n",
+                           nome, vF1 + (vF2 * peso) + (vF3 * altura * 100) - (vF4 * idade));
+            switch (IMC) {
+            case 0 ... 18:
+            printf(" %s, coê está baixo do peso recomendado.\n");
+
+                break;
+            case 18 ... 23:
+            printf(" %s, você esta dentro do peso recomendado.\n");
+            break;
+
+            case 24 ... 30:
+            printf(" %s, você está acima do peso recomendado.\n");
+            break;
+            default:
+            printf("informações de peso e altura inválidas.\n")
+                break;
+            }               
+             }
+                           
+                case 'H':
+                case 'h':  
+                    printf("%s, a sua quantidade mínima de calorias diárias para hipertrofia é: %.2f\n",
+                           nome, vF5 + vF1 + (vF2 * peso) + (vF3 * altura * 100) - (vF4 * idade));
+                    break;
+                case 
+                default:  
+                    printf("Objetivo inválido! Informe 'E' para emagrecimento ou 'H' para hipertrofia.\n");
+                    break;
+                    switch (IMC) {
+            case 0 ... 18:
+            printf(" %s, coê está baixo do peso recomendado.\n");
+
+                break;
+            case 18 ... 23:
+            printf(" %s, você esta dentro do peso recomendado.\n");
+            break;
+
+            case 24 ... 30:
+            printf(" %s, você está acima do peso recomendado.\n");
+            break;
+            default:
+            printf("informações de peso e altura inválidas.\n")
+                break;
+            }               
+            }
+            break;
+
+        case 'M':
+        case 'm':  
+            switch (objetivo) {
+                case 'E':
+                case 'e':  
+                    printf("%s, a sua quantidade mínima de calorias diárias para emagrecimento saudável é: %.2f\n",
+                           nome, vM1 + (vM2 * peso) + (vM3 * altura * 100) - (vM4 * idade));
+                    break;
+                    switch (IMC) {
+            case 0 ... 18:
+            printf(" %s, coê está baixo do peso recomendado.\n");
+
+                break;
+            case 18 ... 23:
+            printf(" %s, você esta dentro do peso recomendado.\n");
+            break;
+
+            case 24 ... 30:
+            printf(" %s, você está acima do peso recomendado.\n");
+            break;
+            default:
+            printf("informações de peso e altura inválidas.\n")
+                break;
+            }               
+
+                case 'H':
+                case 'h':  
+                    printf("%s, a sua quantidade mínima de calorias diárias para hipertrofia é: %.2f\n",
+                           nome, vM5 + vM1 + (vM2 * peso) + (vM3 * altura * 100) - (vM4 * idade));
+                    break;
+
+                default:  
+                    printf("Objetivo inválido! Informe 'E' para emagrecimento ou 'H' para hipertrofia.\n");
+                    break;
+                    switch (IMC) {
+            case 0 ... 18:
+            printf(" %s, coê está baixo do peso recomendado.\n");
+
+                break;
+            case 18 ... 23:
+            printf(" %s, você esta dentro do peso recomendado.\n");
+            break;
+
+            case 24 ... 30:
+            printf(" %s, você está acima do peso recomendado.\n");
+            break;
+            default:
+            printf("informações de peso e altura inválidas.\n")
+                break;
+            }               
+            }
+            break;
+
+        default:  
+            printf("Sexo inválido! Informe 'M' para masculino ou 'F' para feminino.\n");
+            break;
+    }
+    
+
+    return 0;
+}
